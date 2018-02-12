@@ -6,21 +6,27 @@ namespace Sequence_of_Fibonacci
     {
         static void Main(string[] args)
         {
-         
-            double a = 0, b = 1, c ;
-            //Console.WriteLine(a);
-            for (int j = 1; j <= 100; j ++)
+            int number;
+            Console.WriteLine("Insert a number of SoF: ");
+            number = Convert.ToInt32(Console.ReadLine());
+
+            double a = 0, b = 1, c;
+            for (int j = 1; j <= number+1; j ++)
             {
-                if (j > 1)
+                if (j>1)
                 {
                     c = a + b;
                     a = b;
                     b = c;
-                    Console.WriteLine(c);
                 }
                 else
                 {
-                    Console.WriteLine(a);
+                    c = a;
+                }
+
+                if (j >= number-1 && j <= number+1)
+                {
+                    Console.WriteLine(c);
                 }
             }
             
